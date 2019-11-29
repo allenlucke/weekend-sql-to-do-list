@@ -44,7 +44,21 @@ router.post('/', (req, res) => {
     })
  });
  //PUT
-    
+router.put('/:id', (req,res) => {
+    const id = req.params.id;
+    const changeStatus = req.body.completed;
+
+    let queryString = `UPDATE "to_do_list" SET "completed" = '${changeStatus}' WHERE "id" = $1;`;
+    console.log(queryString);
+    pool.query(queryString, [id])
+    .then((response) => {
+        res.sendStatus(201);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+    })
+});
 
 
 
