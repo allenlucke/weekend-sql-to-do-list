@@ -1,5 +1,8 @@
+//Imports postgreSQL
 const pg = require('pg');
+//What is pg. Pool????
 const Pool = pg.Pool;
+//Tells pool what database to look for????
 const pool = new Pool ({
     database: "weekend-to-do-app",
     host: "localhost",
@@ -16,4 +19,5 @@ pool.on('error', (error) => {
     console.log(`err:  ${error}`);
 });
 
+// Exports database
 module.exports = pool;

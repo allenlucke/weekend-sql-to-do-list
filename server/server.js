@@ -1,7 +1,12 @@
+//Imports express
 const express = require('express');
+//Renames express
 const app = express();
+//Imports body-parser
 const bodyParser = require('body-parser');
+//Assings port
 const PORT = process.env.PORT || 5000;
+//Imports the router
 const toDoRouter = require('./routers/to_do.router')
 
 app.use(express.static('server/public'));
