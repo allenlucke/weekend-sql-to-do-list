@@ -29,7 +29,21 @@ router.post('/', (req, res) => {
         res.sendStatus(500);
     })
 });
+ //DELETE
+ router.delete('/:id', (req,res) => {
+    console.log(req.params.id);
+    const taskID = req.params.id;
+    const queryString = `DELETE FROM "to_do_list" WHERE "id" = ${taskID};`;
 
+    pool.query(queryString)
+    .then((response) => {
+        res.sendStatus(200);
+    })
+    .catch((err) => {
+        res.sendStatus(500);
+    })
+ });
+ //PUT
     
 
 
