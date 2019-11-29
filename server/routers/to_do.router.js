@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
         res.sendStatus(500);
     });
 });
-
 //POST
 router.post('/', (req, res) => {
     const newTask = req.body;

@@ -1,0 +1,13 @@
+body{
+    //background-color: aqua;
+}
+header{
+    text-align: center;
+}
+table, th, td {
+    border: 1px solid black;
+  }
+table {
+    width: 100%;
+}
+  
