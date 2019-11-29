@@ -1,16 +1,23 @@
 $(document).ready(init);
 
-function init () {
-    console.log("hi again");
+function init() {
     $('#submitTask').on('click', onSubmitTask);
     getTasks();
 }
 
 function onSubmitTask(event) {
     console.log(`Hi`)
+    const newToDo = {
+        task: $('#taskDescription').val(),
+        completed: $('#taskCompletion').val()
+    };
+    console.log(newToDo)
+    postTask(newToDo);
+    $('#taskDescription').val('');
+    $('#taskCompletion').val('');
 }
 
-function getTasks () {
+function getTasks(event) {
     $.ajax({
         method: 'GET',
         url: '/api/to-do',
@@ -24,7 +31,23 @@ function getTasks () {
     })
 }
 
-function render (response) {
+function postTask(newToDo) {
+    console.log(newToDo);
+    $.ajax({
+        method: 'POST',
+        url: '/api/to-do',
+        data: newToDo,
+    })
+    .then((response)=> {
+    console.log(`POST To-Do`);
+    getTasks(); 
+    })
+    .catch((err) => {
+        console.warn(err);
+    }) 
+}
+
+function render(response) {
     console.log(`in render with ${response}`)
     $('#showToDos').empty();
     const listOFToDos = response;
@@ -33,6 +56,7 @@ function render (response) {
         $('#showToDos').append(`<tr>
                                     <td>${toDo.task}</td>
                                     <td>${toDo.completed}</td>
+                                    <td>Delete</td>
                                     </tr>`);
     } 
 }
