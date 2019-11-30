@@ -6,9 +6,9 @@ Duration: 12 hours
 The SQL To-Do-List is a web application that allows the user to keep track of tasks that need to be done. A user can set a task as being completed or delete the task entirely as needed. All tasks are stored in an SQL database.
 
 ## Screen Shots
-![](images/to_do_pic1.png)
-![](images/to_do_pic2.png)
-![](images/to_do_pic3.png)
+![](server/public/images/to_do_pic1.png)
+![](server/public/images/to_do_pic2.png)
+![](server/public/images/to_do_pic3.png)
 
 ## Usage
 1. Type a task into the input labeled "Description of Task"
