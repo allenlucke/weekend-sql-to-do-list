@@ -1,5 +1,5 @@
 body{
-    //background-color: aqua;
+    background-image: url("../images/to_do_pic1.jpeg");
 }
 header{
     text-align: center;
@@ -9,5 +9,9 @@ table, th, td {
   }
 table {
     width: 100%;
+    background-color: grey;
+}
+button{
+    background-color: aquamarine;
 }
   

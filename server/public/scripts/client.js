@@ -19,6 +19,10 @@ function onSubmitTask(event) {
 
 function onDeleteTask(event) {
     const idNumber = $(this).data('id');
+    deleteTask(idNumber);
+}
+
+function deleteTask(idNumber) {
     $.ajax({
         method: 'DELETE',
         url: '/api/to-do/' + idNumber
@@ -70,6 +74,7 @@ function render(response) {
         $('#showToDos').append(`<tr>
                                     <td>${toDo.task}</td>
                                     <td>${toDo.completed}</td>
+                                    <td><button id="changeStatus" data-trans="${toDo.completed} data-id="${toDo.id}>Change Status</button></td>
                                     <td><button id="deleteButton" data-id="${toDo.id}">Delete</button></td>
                                     </tr>`);
     } 
