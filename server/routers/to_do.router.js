@@ -6,7 +6,7 @@ const pool = require('../modules/pool');
 //API Calls
 // GET
 router.get('/', (req, res) => {
-    pool.query(`SELECT * FROM "to_do_list" ORDER BY "completed" DESC;`)
+    pool.query(`SELECT * FROM "to_do_list" ORDER BY "completed" ASC;`)
     .then((response) => {
         res.send(response.rows);
     })

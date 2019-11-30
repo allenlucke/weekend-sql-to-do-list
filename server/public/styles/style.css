@@ -1,5 +1,5 @@
 body{
-    //background-image: url("../images/to_do_pic1.jpeg");
+    background-image: url("../images/to_do_pic1.jpeg");
 }
 header{
     text-align: center;
@@ -12,6 +12,16 @@ table {
     background-color: grey;
 }
 button{
-    background-color: aquamarine;
+    background-color: green;
 }
+.js-delete-btn-color {
+    background-color: red;
+}
+.js-not-completed-green {
+    background-color: aqua;
+}
+.js-btn-not-completed-red {
+    background-color: red;
+}
+
   

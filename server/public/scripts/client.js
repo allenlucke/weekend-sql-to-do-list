@@ -106,11 +106,21 @@ function render(response) {
     const listOFToDos = response;
 
     for(let toDo of listOFToDos) {
+        if(toDo.completed == 'yes' || toDo.completed == 'Yes' || toDo.completed == 'Y' || toDo.completed == 'y') {
         $('#showToDos').append(`<tr>
                                     <td>${toDo.task}</td>
                                     <td>${toDo.completed}</td>
-                                    <td><button id="changeStatus" data-trans="${toDo.completed}" data-id="${toDo.id}">Change Status</button></td>
-                                    <td><button id="deleteButton" data-id="${toDo.id}">Delete</button></td>
+                                    <td><button class="js-btn-not-completed-red" id="changeStatus" data-trans="${toDo.completed}" data-id="${toDo.id}">Change Status</button></td>
+                                    <td><button id="deleteButton" class="js-delete-btn-color" data-id="${toDo.id}">Delete</button></td>
                                     </tr>`);
-    } 
+        } 
+    else {
+        $('#showToDos').append(`<tr>
+                                    <td class="js-not-completed-green">${toDo.task}</td>
+                                    <td class="js-not-completed-green">${toDo.completed}</td>
+                                    <td class="js-not-completed-green"><button id="changeStatus" data-trans="${toDo.completed}" data-id="${toDo.id}">Change Status</button></td>
+                                    <td class="js-not-completed-green"><button id="deleteButton" class="js-delete-btn-color" data-id="${toDo.id}">Delete</button></td>
+                                    </tr>`);
+        } 
+    }
 }
