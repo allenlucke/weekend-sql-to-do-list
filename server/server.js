@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 //Imports body-parser
 const bodyParser = require('body-parser');
-//Assings port
+//Assigns port
 const PORT = process.env.PORT || 5000;
 //Imports the router
 const toDoRouter = require('./routers/to_do.router')

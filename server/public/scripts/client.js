@@ -2,11 +2,11 @@ $(document).ready(init);
 
 function init() {
     $('#submitTask').on('click', onSubmitTask);
+    $('#showToDos').on('click', '#deleteButton', onDeleteTask);
     getTasks();
 }
 
 function onSubmitTask(event) {
-    console.log(`Hi`)
     const newToDo = {
         task: $('#taskDescription').val(),
         completed: $('#taskCompletion').val()
@@ -15,6 +15,20 @@ function onSubmitTask(event) {
     postTask(newToDo);
     $('#taskDescription').val('');
     $('#taskCompletion').val('');
+}
+
+function onDeleteTask(event) {
+    const idNumber = $(this).data('id');
+    $.ajax({
+        method: 'DELETE',
+        url: '/api/to-do/' + idNumber
+    })
+    .then((response) => {
+        getTasks();
+    })
+    .catch((response) => {
+        console.warn(response);
+    })
 }
 
 function getTasks(event) {
@@ -56,7 +70,7 @@ function render(response) {
         $('#showToDos').append(`<tr>
                                     <td>${toDo.task}</td>
                                     <td>${toDo.completed}</td>
-                                    <td>Delete</td>
+                                    <td><button id="deleteButton" data-id="${toDo.id}">Delete</button></td>
                                     </tr>`);
     } 
 }
