@@ -4,6 +4,29 @@ body{
 header{
     text-align: center;
 }
+h1 {
+    font-size: 56px;
+}
+h2 {
+    font-size: 32px;
+}
+.css-input1 {
+    font-size: 18px;
+    height: 24px;
+    width: 500px;
+}
+.css-input2 {
+    font-size: 18px;
+    height: 24px;
+    width: 180px;
+}
+.css-submit-btn {
+    height: 32px;
+    width: 100px;
+}
+#css-container1 {
+    text-align: center;
+}
 table, th, td {
     border: 1px solid black;
   }
