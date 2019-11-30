@@ -1,7 +1,7 @@
 $(document).ready(init);
 
 function init() {
-    $('#submitTask').on('click', onSubmitTask);
+    $('#js-task').on('submit', onSubmitTask);
     $('#showToDos').on('click', '#deleteButton', onDeleteTask);
     $('#showToDos').on('click', '#changeStatus', onChangeStatus);
     getTasks();
